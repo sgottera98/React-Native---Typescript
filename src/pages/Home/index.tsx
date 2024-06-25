@@ -11,7 +11,7 @@ import {
   FlatList,
 } from 'react-native';
 import {TaskList} from '../../components/TaskList';
-import {TasksContext} from '../../context/TasksContext';
+import {useTaskList} from '../../context/TasksContext';
 
 // substituido por ContextAPI
 // interface Task {
@@ -23,7 +23,7 @@ export const Home = () => {
   const [newTask, setNewTask] = useState('');
   // substituido por ContextAPI
   // const [tasks, setTasks] = useState<Task[]>([]);
-  const {addTask} = useContext(TasksContext);
+  const {addTask} = useTaskList();
 
   const handleAddTask = () => {
     const data = {
@@ -34,7 +34,7 @@ export const Home = () => {
     // substituido por ContextAPI
     // setTasks([...tasks, data]);
 
-    addTask();
+    addTask(data);
   };
 
   return (
