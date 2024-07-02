@@ -50,6 +50,7 @@ export const Home = () => {
         />
 
         <TouchableOpacity
+          testID='addButton'
           onPress={handleAddTask}
           activeOpacity={0.7}
           style={styles.button}>
